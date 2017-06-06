@@ -1,0 +1,44 @@
+■ログ設計
+ 正常に処理が行われたかを確認するためにログファイルにログを出力する
+
+※ログ出力はsyslog関数を使用する
+
+->ログメッセージ
+API処理開始、終了時とエラー時にログを出力する
+
+- APIが呼び出されたときは以下のログを出力する
+INFO  06/01 10:00:00 START - [API_NAME]
+
+- APIの終了時は以下のログを出力する
+INFO  06/01 10:00:00 END - [API_NAME]
+
+- センサー側から情報が取得できなかったとき以下のログを出力する
+ERROR 06/01 10:00:00 - [API名]：[関数名]
+ERROR 06/01 10:00:00 - Failure to acquire information from sensor
+
+- センサー側から取得した情報をDBに登録できなかったとき以下のログを出力する
+ERROR 06/01 10:00:00 - [API名]：[関数名]
+ERROR 06/01 10:00:00 - Failed to add data to the DB
+
+- DBから情報が取得できなかったとき以下のログを出力する
+ERROR 06/01 10:00:00 - [API名]：[関数名]
+ERROR 06/01 10:00:00 - Failure to acquire information from DB
+
+
+ex)
+INFO  06/01 10:00:00 START - [AAA]
+INFO  06/01 10:00:00 END - [AAA]
+INFO  06/01 11:00:00 START - [AAA]
+ERROR 06/01 11:00:00 - [AAA]：[XXX]
+ERROR 06/01 11:00:00 - Failure to acquire information from sensor
+INFO  06/01 11:00:00 END - [AAA]
+INFO  06/01 12:00:00 START - [AAA]
+INFO  06/01 12:00:00 END - [AAA]
+INFO  06/01 13:00:00 START - [AAA]
+INFO  06/01 13:00:00 END - [AAA]
+
+
+-> ログローテーション間隔
+週に一度ローテートを行う。過去4週間分のログデータを保持しておく。
+
+
