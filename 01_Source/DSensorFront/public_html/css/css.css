@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 header{
     font-size: 80%; /*フォントサイズの指定*/
+    font-family: "メイリオ", sans-serif; /*フォントの指定*/
     width: 100%;    /*横幅の指定*/
     text-align: left; /*文字の中央寄せ*/
     padding-top: 10px;  /*文字上部の余白指定*/
@@ -22,6 +23,7 @@ header h1{
 
 .main {
   display: flex;
+  font-family: "メイリオ", sans-serif; 
 }
 .main section {
   margin: 10px;
@@ -45,6 +47,7 @@ header h1{
 
 footer{
     font-size: 80%; /*フォントサイズの指定*/
+    font-family: "メイリオ", sans-serif; /*フォントの指定*/
     width: 100%;    /*横幅の指定*/
     text-align: center; /*文字の中央寄せ*/
     padding-top: 10px;  /*文字上部の余白指定*/
