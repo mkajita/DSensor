@@ -17,8 +17,9 @@ header{
     background-color: lightsalmon;  /*背景色の指定*/
 }
 header h1{
-    color: darkred;    /*文字色の指定*/
+    color: black;    /*文字色の指定*/
     letter-spacing: 5px;    /*文字と文字の間隔をあける*/
+    font-size: xx-large;
 }
 
 .main {
@@ -34,10 +35,29 @@ header h1{
 }
 .main h1 {
   color: #E6AC27;
-  font-size: 1.5rem;
+  font-size: x-large;
+}
+.main h2 {
+  color: darkblue;
+  font-size: larger;
+}
+.main p-wet {
+  margin-top: 20px;
+    font-family: cursive;
+    color: blue;
+    font-size: x-large;
 }
 .main p {
   margin-top: 20px;
+    font-family: cursive;
+    color: dodgerblue;
+    font-size: x-large;
+}
+.main p-dry {
+  margin-top: 20px;
+    font-family: cursive;
+    color: red;
+    font-size: x-large;
 }
 .main .col-humidity{
 }
