@@ -85,9 +85,11 @@ class Connection:
                 
                 # レスポンスの確認
                 if response.status_code == Setting.STATUS_CODE_SUCCESS:
-                    # レスポンスをJSON形式で取得
-                    retData = response.json()
-                    logging.debug("retData = " + str(retData))
+                    # status codeのみで判定
+                    ## レスポンスをJSON形式で取得
+                    #retData = response.json()
+                    #logging.debug("retData = " + str(retData))
+                    logging.info("response = " + str(response))
                     
                     # 送信成功でループ脱出
                     break

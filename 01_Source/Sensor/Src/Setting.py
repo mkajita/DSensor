@@ -48,11 +48,12 @@ SPI_CS = 8
 
 ##### Connection.py #####
 # WebAPI用パラメータ
-URL = "http://172.24.215.178:8080/humidity"
+URL = "http://172.24.215.178:9000/v2/humidity"
+#URL = "http://172.24.215.229:9400/humidity"
 
 # プロキシ設定
 USE_PROXY = True
-PROXY = "proxy.toyoko-sys.co.jp"
+PROXY = "http://proxy.toyoko-sys.co.jp:8080"
 
 # JSONフォーマット
 KEY_SENSOR_ID = "sensor_id"
