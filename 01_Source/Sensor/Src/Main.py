@@ -203,8 +203,19 @@ def main():
         if existLogFolder is False:
             os.mkdir(Setting.LOG_FILE_RELATIVE_PATH)
         
+        # 現在時刻取得
+        now = datetime.now()
+        currentDate = now.strftime("%Y%m%d")
+        
+        # 古いログ削除
+        files = os.listdir(Setting.LOG_FILE_RELATIVE_PATH)
+        for file in files:
+            filePath = os.path.join(Setting.LOG_FILE_RELATIVE_PATH, file)
+            mtime = datetime.fromtimestamp(int(os.path.getmtime(filePath)))
+            if (now - mtime).days >= Setting.LOG_STORAGE_DAYS:
+                os.remove(filePath)
+        
         # ログ出力基本情報設定
-        currentDate = datetime.now().strftime("%Y%m%d")
         logFileName = currentDate + Setting.LOG_FILE_EXT
         logFilePath = os.path.join(Setting.LOG_FILE_RELATIVE_PATH, logFileName)
         logging.basicConfig(filename=logFilePath, level=Setting.LOG_FILE_LEVEL, format="%(asctime)s %(levelname)s %(module)s %(funcName)s %(lineno)d %(message)s")

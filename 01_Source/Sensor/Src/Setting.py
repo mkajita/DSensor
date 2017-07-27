@@ -15,6 +15,9 @@ LOG_FILE_RELATIVE_PATH = "../Log"
 LOG_FILE_EXT = ".log"
 LOG_FILE_LEVEL = logging.INFO
 
+# ログファイル保存期間（日）
+LOG_STORAGE_DAYS = 10
+
 # 正規化のための基準
 NORMALIZED_BASE = 100
 
