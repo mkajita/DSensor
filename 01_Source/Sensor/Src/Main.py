@@ -6,7 +6,8 @@ import math
 import logging
 import threading
 import traceback
-from datetime import datetime
+#from datetime import datetime
+import datetime
 
 import Setting
 import Measurement
@@ -86,11 +87,16 @@ class Main:
         logging.info("start.")
         
         try:
+            i = 0
             while True:
                 try:
                     # 現在時刻の取得
-                    measurementTime = datetime.now()
-                    
+                    measurementTime = datetime.datetime.now()
+                    ## [Debug]時刻の偽装
+                    #measurementTime = measurementTime + datetime.timedelta(hours=i)
+                    #measurementTime = measurementTime - datetime.timedelta(seconds=(i*Setting.PROCESS_INTERVAL))
+                    #i = i + 1
+
                     # 湿度の取得
                     pureData = self.measurement.read_data(Setting.ADC_PIN)
                     
@@ -204,14 +210,14 @@ def main():
             os.mkdir(Setting.LOG_FILE_RELATIVE_PATH)
         
         # 現在時刻取得
-        now = datetime.now()
+        now = datetime.datetime.now()
         currentDate = now.strftime("%Y%m%d")
         
         # 古いログ削除
         files = os.listdir(Setting.LOG_FILE_RELATIVE_PATH)
         for file in files:
             filePath = os.path.join(Setting.LOG_FILE_RELATIVE_PATH, file)
-            mtime = datetime.fromtimestamp(int(os.path.getmtime(filePath)))
+            mtime = datetime.datetime.fromtimestamp(int(os.path.getmtime(filePath)))
             if (now - mtime).days >= Setting.LOG_STORAGE_DAYS:
                 os.remove(filePath)
         
