@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017/06/12, 17:32:55
+    Author     : Vellum
+*/
+header{
+    font-size: 80%; /*フォントサイズの指定*/
+    font-family: "メイリオ", sans-serif; /*フォントの指定*/
+    width: 100%;    /*横幅の指定*/
+    text-align: left; /*文字の中央寄せ*/
+    padding-top: 10px;  /*文字上部の余白指定*/
+    padding-bottom: 10px;   /*文字下部の余白指定*/
+    background-color: lightsalmon;  /*背景色の指定*/
+}
+header h1{
+    color: black;    /*文字色の指定*/
+    letter-spacing: 5px;    /*文字と文字の間隔をあける*/
+    font-size: xx-large;
+}
+
+.main {
+  display: flex;
+  font-family: "メイリオ", sans-serif; 
+}
+.main section {
+  margin: 10px;
+  border-radius: 5px;
+  background: #F5F0CF;
+  padding: 15px;
+}
+.main h1 {
+  color: #E6AC27;
+  font-size: x-large;
+}
+.main h2 {
+  color: darkblue;
+  font-size: larger;
+}
+.main p-wet {
+  margin-top: 20px;
+    font-family: cursive;
+    color: blue;
+    font-size: x-large;
+}
+.main p {
+  margin-top: 20px;
+    font-family: cursive;
+    color: dodgerblue;
+    font-size: x-large;
+}
+.main p-dry {
+  margin-top: 20px;
+    font-family: cursive;
+    color: red;
+    font-size: x-large;
+}
+.main .col-humidity{
+	align-items: center;
+    width: 100px;
+}
+.main .col-graph{
+    flex: 1;
+}
+
+footer{
+    font-size: 80%; /*フォントサイズの指定*/
+    font-family: "メイリオ", sans-serif; /*フォントの指定*/
+    width: 100%;    /*横幅の指定*/
+    text-align: center; /*文字の中央寄せ*/
+    padding-top: 10px;  /*文字上部の余白指定*/
+    padding-bottom: 10px;   /*文字下部の余白指定*/
+    background-color: lightsalmon;  /*背景色の指定*/
+}
+footer address{
+    color: #fff;    /*文字色の指定*/
+    letter-spacing: 5px;    /*文字と文字の間隔をあける*/
+}

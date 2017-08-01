@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>土壌センサー</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+    <!-- Load c3.css -->
+    <link href="css/c3.min.css" rel="stylesheet" type="text/css">
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>　土壌センサー</h1>
+        </header>
+        <div class="main">
+            <section class="col-humidity">
+                <h1>現在湿度</h1>
+                <hr>
+                <div id="humidityInfo"></div>
+                <script src="js/infomationArea.js"></script>
+            </section>
+            <section class="col-graph">
+                <h1><center>推移</center></h1>
+                <hr>
+                <!-- <script src="js/d3.min.js" charset="utf-8"></script>-->
+                <script src="js/lib/d3.min.js" charset="utf-8"></script>
+                <script src="js/lib/c3.min.js"></script>
+                <div id="chart"></div>
+                <script src="js/generateChart.js"></script>
+            </section>
+        </div>
+
+        <footer>
+          <address>Copyright(C)2017 NAGOMI Development Team.</address>
+        </footer>
+    </body>
+</html>
